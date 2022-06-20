@@ -34,7 +34,7 @@ export class HatRenderer extends FaceRenderer {
     // Setup sceneß
     protected async setupScene(scene: three.Scene) {
         // Hat
-        const hatGltf = await new GLTFLoader().loadAsync("QUAY_NIGHTFALL_OCCLUDER_v2.glb");
+        const hatGltf = await new GLTFLoader().loadAsync("RAYBAN_AVIATOR_OCCLUDER_v2.glb");
         console.log(hatGltf.scene)
         scene.add(hatGltf.scene);
         this.hat = scene.getObjectByName("HeadTrack");

@@ -34,22 +34,23 @@ export class HatRenderer extends FaceRenderer {
     // Setup sceneß
     protected async setupScene(scene: three.Scene) {
         // Hat
-        const hatGltf = await new GLTFLoader().loadAsync("spyglasseswithaobake_v6.glb");
+        const hatGltf = await new GLTFLoader().loadAsync("QUAY_COMETHRO_V7.glb");
         console.log(hatGltf.scene)
         scene.add(hatGltf.scene);
         this.hat = scene.getObjectByName("HeadTrack");
-
+        
 
         if (this.hat)
             this.addPlugin(new HeadTrackPlugin(this.hat, true));
         // Occluder
         this.head = scene.getObjectByName("HeadOccluder");
-        this.shadow = scene.getObjectByName("SkullAndFaceMesh");
+     
+        // this.shadow = scene.getObjectByName("SkullAndFaceMesh");
 
-        this.shadow.material.transparent = true;
-        // this.shadow.material.alphaTest = 0.8;
-        // console.log( this.shadow.material.alphaTest)
-        this.shadow.material.opacity = 0.3;
+        // this.shadow.material.transparent = true;
+        // // this.shadow.material.alphaTest = 0.8;
+        // // console.log( this.shadow.material.alphaTest)
+        // this.shadow.material.opacity = 0.3;
     
         // this.shadow.material.blending = three.MultiplyBlending;
 
